@@ -8,7 +8,7 @@ class Usuario
 
 data class ConteudoEducacional(val nome: String, val duracao: Int, val nivel: Nivel) {
     override fun toString(): String {
-        return ("Conteúdo: ${nome} / Duração: ${duracao}min / Nível: ${nivel}")
+        return ("Conteúdo: $nome / Duração: ${duracao}min / Nível: $nivel")
     }
 
     data class Formacao(val nome: String, val conteudos: ConteudoEducacional) {
@@ -17,7 +17,7 @@ data class ConteudoEducacional(val nome: String, val duracao: Int, val nivel: Ni
             return ("Avaliação: ${nome}\n${conteudos}")
         }
 
-        data class Matricular(val aluno: String, val grade: ConteudoEducacional.Formacao) {
+        data class Matricular(val aluno: String, val grade: Formacao) {
             override fun toString(): String {
                 return ("Aluno matriculado: ${aluno}\n${grade}\n")
             }
